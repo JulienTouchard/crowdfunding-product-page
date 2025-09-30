@@ -1,56 +1,165 @@
+@font-face {
+    font-family: "commissionnair";
+    src: url("../font/Commissioner/static/Commissioner-Regular.ttf");
+}
+
 /* reset */
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    --primary: #157A74;
+    --secondary: #3CB4AC;
+    font-family: "commissionnair", sans-serif;
 }
-img,input{
+body{
+    background: #FAFAFA;
+}
+img,
+input {
+    vertical-align: bottom;
     width: 100%;
 }
-/* HEADER */
-header{
-    position:relative;
+
+ul {
+    list-style-type: none;
 }
-header>div{
+h1{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+.select_btn {
+    color: white;
+    font-weight: 600;
+    background-color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: none;
+    width: 80%;
+
+}
+
+.select_btn:hover {
+    background-color: var(--secondary);
+}
+
+/* HEADER */
+header {
+    position: relative;
+}
+
+header>div {
     width: 100%;
     position: absolute;
     top: 0;
 }
-header>nav{
+
+header>nav {
     position: relative;
     z-index: 1;
     /* display: flex;
     justify-content: space-between; */
 }
 
+header ul {
+    display: none;
+    /* display: flex; */
+    color: white;
+    font-weight: 600;
+    li {
+        padding: .5rem;
+    }
+}
+
 /* 
 Je doit utiliser les element independament 
 pavec relative absolute !!! pas le parent !!! */
 
-#logo,#burger{
-    position:absolute;
+#logo,
+#burger,
+header>nav>ul {
+    position: absolute;
     z-index: 1;
     padding: 1rem;
     top: 0;
 
 }
-#logo{
+
+#logo {
     left: 0;
 }
-#burger{
+
+#burger,
+header ul {
     right: 0;
 }
-/* MAIN */
 
-section:first-child{
+
+/* MAIN */
+#intro p{
+    text-align: center;
+    color:#7a7a7aff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+section:first-child {
     position: relative;
     z-index: 1;
     top: 17rem;
-    margin-bottom: 17rem;
+    margin-bottom: 19rem;
 }
-#circle-logo{
+
+#circle-logo {
     display: inline-block;
 }
-h1{
+
+section {
+    width: 90%;
+    border: .01rem rgb(221, 221, 221) solid;
+    border-radius:.5rem;
+    background-color: #fff;
     margin: auto;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+#circle-logo img{
+    position: relative;
+    top: -1.8rem;
+}
+.bookmark{
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: none;
+}
+.bookmark span:first-child {
+    display: none;
+}
+.btn-intro{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+@media screen and (min-width:576px) {
+    #burger {
+        display: none;
+    }
+
+    .bookmark span:first-child {
+        display: inline;
+    }
+
+    .bookmark span:last-child {
+        display: none;
+    }
+
+    header ul {
+        display: flex;
+    }
 }
